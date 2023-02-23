@@ -1,3 +1,17 @@
+# About
+
+This project is to make awesome custom gamer ID card build with date we get in different game API.
+
+# Frontent
+
+This project is build with React with additionnal cool tools like : 
+
+Storybook : https://storybook.js.org/
+
+Styled components : https://styled-components.com
+
+Chakra UI : https://chakra-ui.com/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
