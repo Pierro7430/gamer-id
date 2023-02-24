@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -17,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>React version : {React.version}</p>
       </header>
     </div>
   );
