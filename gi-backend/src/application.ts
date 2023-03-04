@@ -9,6 +9,7 @@ import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
+import { PasswordHasher } from './services/password-hasher'; // Ajout de cet import
 
 export {ApplicationConfig};
 
@@ -17,6 +18,9 @@ export class GiBackendApplication extends BootMixin(
 ) {
   constructor(options: ApplicationConfig = {}) {
     super(options);
+
+    // Ajoutez la liaison 'services.password-hasher' ici
+    this.bind('services.password-hasher').toClass(PasswordHasher);
 
     // Set up the custom sequence
     this.sequence(MySequence);
