@@ -9,11 +9,10 @@ class Input extends React.Component {
           className="c-form-group__input"
           placeholder={this.props.label}
           type={this.props.type}
-          value={this.state.value}
           />
           <label 
             className="c-form-group__label"
-            for={this.props.id}
+            htmlFor={this.props.id}
           >
             {this.props.label}
           </label>
