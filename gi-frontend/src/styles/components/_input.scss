@@ -1,0 +1,52 @@
+.c-form-group {
+  position: relative;
+  padding: 15px 0 0;
+  min-width: 200px;
+  width: 250px;
+
+  &__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.18s;
+    font-size: 1rem;
+    color: $grey;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 7px 0;
+    font-size: 1.3rem;
+    border: 0;
+    border-bottom: 2px solid $grey;
+    font-weight: 700;
+    outline: 0;
+    color: $white;
+    background: transparent;
+    transition: border-color 0.2s;
+  
+    &::placeholder {
+      color: transparent;
+    }
+  
+    &:placeholder-shown ~ .c-form-group__label {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 20px;
+    }
+
+    &:focus {
+        ~ .c-form-group__label {
+          position: absolute;
+          top: 0;
+          display: block;
+          transition: 0.2s;
+          font-size: 1rem;
+          color: $primary;
+        }
+        border-width: 2px;
+        border-image: linear-gradient(to right, $primary,$secondary);
+        border-image-slice: 1;
+      }
+  }
+}
