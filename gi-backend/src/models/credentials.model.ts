@@ -1,7 +1,7 @@
 import {model, property} from '@loopback/repository';
 
 @model()
-export class Credential {
+export class Credentials {
   @property({
     type: 'string',
     required: true,
@@ -14,3 +14,5 @@ export class Credential {
   })
   password: string;
 }
+
+export {};

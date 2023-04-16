@@ -1,7 +1,19 @@
 import {Entity, model, property} from '@loopback/repository';
-import {PasswordHasher} from '../services/password-hasher';
 
-@model()
+@model({
+  settings: {
+    indexes: {
+      uniqueEmail: {
+        keys: {
+          email: 1,
+        },
+        options: {
+          unique: true,
+        },
+      },
+    },
+  },
+})
 export class User extends Entity {
   @property({
     type: 'number',
@@ -14,19 +26,13 @@ export class User extends Entity {
     type: 'string',
     required: true,
   })
-  firstname: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  lastname: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
   email: string;
+
+  @property({
+    type: 'boolean',
+    default: false,
+  })
+  emailVerified: boolean;
 
   @property({
     type: 'string',
@@ -34,20 +40,18 @@ export class User extends Entity {
   })
   password: string;
 
+  @property({
+    type: 'string',
+  })
+  firstName?: string;
+
+  @property({
+    type: 'string',
+  })
+  lastName?: string;
+
   constructor(data?: Partial<User>) {
     super(data);
-  }
-
-  async setPassword(password: string, passwordHasher: PasswordHasher) {
-    const hashedPassword = await passwordHasher.hashPassword(password);
-    this.password = hashedPassword;
-  }
-
-  async verifyPassword(
-    password: string,
-    passwordHasher: PasswordHasher,
-  ): Promise<boolean> {
-    return await passwordHasher.comparePassword(password, this.password);
   }
 }
 
