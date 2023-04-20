@@ -1,1 +1,1 @@
-export * from './gamer-id-postgres.datasource';
+export * from './postgresql.datasource';
