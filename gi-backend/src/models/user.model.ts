@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, hasOne} from '@loopback/repository';
+import {SteamUser} from './steam-user.model';
 
 @model({
   settings: {
@@ -49,6 +50,9 @@ export class User extends Entity {
     type: 'string',
   })
   lastName?: string;
+
+  @hasOne(() => SteamUser)
+  steamUser: SteamUser;
 
   constructor(data?: Partial<User>) {
     super(data);
