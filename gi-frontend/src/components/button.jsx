@@ -1,12 +1,12 @@
 import React from 'react';
 
-class Input extends React.Component {
+class Button extends React.Component {
     render() {
       return (
         <button 
           type={this.props.type} 
           className={`btn btn--glitch ${ this.props.addClass}`}
-          // onClick={onClick}
+          onClick={ this.props.onClick }
         >
           {this.props.content}
         </button>
@@ -14,5 +14,5 @@ class Input extends React.Component {
     }
   }
 
-  export default Input;
+  export default Button;
   

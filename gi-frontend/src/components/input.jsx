@@ -1,25 +1,26 @@
 import React from 'react';
+import { useState } from 'react';
 
-class Input extends React.Component {
-  render() {
-    return (
-      <div className={`c-form-group ${ this.props.addClass}`}>
-        <input 
-          id={this.props.id}
-          className="c-form-group__input"
-          placeholder={this.props.label}
-          type={this.props.type}
-          />
-          <label 
-            className="c-form-group__label"
-            htmlFor={this.props.id}
-          >
-            {this.props.label}
-          </label>
-      </div>
-    );
-  }
+// extends React.Component 
+function Input(props) {
+  return (
+    <div className={`c-form-group ${ props.addClass}`}>
+      <input 
+        id={props.id}
+        className="c-form-group__input"
+        placeholder={props.label}
+        type={props.type}
+        onChange={e => props.setValue(e.target.value)}
+        />
+        <label 
+          className="c-form-group__label"
+          htmlFor={props.id}
+        >
+          {props.label}
+        </label>
+    </div>
+  );
 }
 
-  export default Input;
+export default Input;
   
