@@ -9,9 +9,11 @@ import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
+import {PostgresSqlDataSource} from './datasources';
 import {JWTService} from './services/jwt-service';
 import {PasswordHasher} from './services/password-hasher';
 import {EmailService} from './services/email.service';
+import {SteamService} from './services/steam.service';
 
 export {ApplicationConfig};
 
@@ -20,6 +22,8 @@ export class GiBackendApplication extends BootMixin(
 ) {
   constructor(options: ApplicationConfig = {}) {
     super(options);
+
+    this.dataSource(PostgresSqlDataSource, 'PostgresSQL');
 
     // Set up the custom sequence
     this.sequence(MySequence);
@@ -46,5 +50,6 @@ export class GiBackendApplication extends BootMixin(
     this.bind('services.jwt-service').toClass(JWTService);
     this.bind('services.password-hasher').toClass(PasswordHasher);
     this.bind('services.email').toClass(EmailService);
+    this.bind('services.steam').toClass(SteamService);
   }
 }

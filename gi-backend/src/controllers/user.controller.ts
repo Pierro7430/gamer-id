@@ -19,12 +19,11 @@ import {
   HttpErrors,
 } from '@loopback/rest';
 import {inject} from '@loopback/core';
-import {User} from '../models';
+import {User, Credentials} from '../models';
 import {UserRepository} from '../repositories';
 import {JWTService} from '../services/jwt-service';
 import {PasswordHasher} from '../services/password-hasher';
 import {EmailService} from '../services/email.service';
-import {Credentials} from '../models/credentials.model';
 import { validatePassword, validateEmail } from '../utils/validation';
 
 export class UserController {
