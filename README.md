@@ -34,7 +34,7 @@ npm install
 
 - Créez une nouvelle base de données PostgreSQL.
 - Configurez le fichier src/datasources/db.datasource.ts avec les informations de votre base de données (hôte, nom d'utilisateur, mot de passe, nom de la base de données).
-- Configurer le fiechier .env à la racine de gi-backend
+- Configurer le fichier .env à la racine de gi-backend
 - Créez les tables dans la base de donnée :
 ```
 npm run migrate
@@ -52,7 +52,7 @@ cd gi-frontend
 npm install
 ```
 
-4. Démarrer le backend :
+4. Démarrer le frontend :
 ```
 npm start
 ```
@@ -69,6 +69,16 @@ L'application est maintenant accessible à l'adresse http://localhost:3000/
 - Recherche et ajout d'amis
 - Partage de statistiques et de succès de jeux
 
+## Update & Debug
+
+Après avoir pull il peut être nécessaire d'effectuer un npm install en front et en back
+```
+cd gi-backend
+npm i
+cd ../
+cd gi-frontend
+npm i
+```
 
 ## Licence
 
