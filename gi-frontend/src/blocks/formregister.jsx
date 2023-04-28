@@ -5,14 +5,15 @@ import Input from '../components/input';
 import Button from '../components/button';
 
 // Form login
-// extends React.Component 
 function FormLogin(props){
 
   //  ────────♡────────
   //  DEFINE VARIABLES
   //  ─────────────────
   const [nameid, setNameid] = useState('');
+  const [mail, setMail] = useState('');
   const [pass, setPass] = useState('');
+  const [confirmPass, setConfirmPass] = useState('');
 
   //  ────────♡────────
   //  FUNCTIONS
@@ -22,10 +23,11 @@ function FormLogin(props){
   function handleClick(e) {
     e.preventDefault();
     console.log("name:"+nameid);
-    if (pass) console.log("mot de passe renseigné");
-    //  ────────♡────────
+    console.log("mail:"+mail);
+    (pass == confirmPass) ? console.log("mot de passe validé") : console.log("mauvais mot de passe");
+    // ────────♡────────
     // TODO 
-    // VERIFICATION LOGIN
+    // SEND INFORMATION TO THE BACK
     //  ─────────────────
   }
 
@@ -36,12 +38,18 @@ function FormLogin(props){
     <div className="b-form-login">
       <form>
         <Input 
-          //onSelectLanguage={this.handleLanguage} 
           label={'Identifiant'} 
           type={'text'} 
           id={'name'} 
           addClass={'mt-xl'} 
           setValue={setNameid}
+        />
+        <Input 
+          label={'Mail'} 
+          type={'text'} 
+          id={'mail'} 
+          addClass={'mt-xl'} 
+          setValue={setMail}
         />
         <Input 
           label={'Mot de passe'} 
@@ -50,23 +58,25 @@ function FormLogin(props){
           addClass={'mt-xl'} 
           setValue={setPass}
         />
+        <Input 
+          label={'Vérification mot de passe'} 
+          type={'password'} 
+          id={'confirm-pass'} 
+          addClass={'mt-xl'} 
+          setValue={setConfirmPass}
+        />
 
-        <Button /*onClick={getValues}*/ 
+        <Button 
           content={'button'} 
           type={'submit'} 
           addClass={'mt-xxl'} 
           onClick={handleClick}
         />
-
-        <div className="mt-xxl">
-          <Link to="/register" >S'inscrire</Link>
-        </div>
-
-        <div className="mt-xxl">
-          <Link to="/hello" >page interne</Link>
-        </div>
-        
       </form>
+
+      <div className="mt-xxl">
+       
+      </div>
     </div>
   );
 };
