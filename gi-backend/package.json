@@ -9,7 +9,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": "14 || 16 || 18 || 19"
+    "node": "14 || 16 || 18 || 19 || 20"
   },
   "scripts": {
     "build": "lb-tsc",
@@ -49,32 +49,32 @@
     "!*/__tests__"
   ],
   "dependencies": {
-    "@loopback/authentication-passport": "^5.0.10",
-    "@loopback/boot": "^5.0.10",
-    "@loopback/core": "^4.0.10",
-    "@loopback/repository": "^5.1.5",
-    "@loopback/rest": "^12.0.10",
-    "@loopback/rest-explorer": "^5.0.10",
-    "@loopback/security": "^0.8.10",
+    "@loopback/authentication-passport": "^6.1.4",
+    "@loopback/boot": "^6.1.4",
+    "@loopback/core": "^5.1.4",
+    "@loopback/repository": "^6.1.4",
+    "@loopback/rest": "^13.1.4",
+    "@loopback/rest-explorer": "^6.1.4",
+    "@loopback/security": "^0.10.4",
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.3.1",
     "jsonwebtoken": "^9.0.0",
-    "loopback-connector-postgresql": "^5.5.2",
+    "loopback-connector-postgresql": "^7.0.1",
     "nodemailer": "^6.9.1",
-    "passport": "^0.6.0",
+    "passport": "^0.7.0",
     "passport-steam": "^1.0.17",
     "steamapi": "^2.2.0",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
-    "@loopback/build": "^9.0.10",
-    "@loopback/eslint-config": "^13.0.10",
-    "@loopback/testlab": "^5.0.10",
+    "@loopback/build": "^10.1.4",
+    "@loopback/eslint-config": "^14.0.5",
+    "@loopback/testlab": "^6.1.4",
     "@types/bcryptjs": "^2.4.2",
     "@types/jsonwebtoken": "^9.0.1",
-    "@types/node": "^14.18.42",
+    "@types/node": "^20.10.4",
     "@types/nodemailer": "^6.4.7",
     "@types/passport": "^1.0.12",
     "@types/passport-steam": "^1.0.1",
@@ -82,6 +82,6 @@
     "@types/validator": "^13.7.15",
     "eslint": "^8.38.0",
     "source-map-support": "^0.5.21",
-    "typescript": "~4.9.5"
+    "typescript": "~5.3.3"
   }
 }

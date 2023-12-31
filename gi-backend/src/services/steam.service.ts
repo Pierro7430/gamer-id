@@ -22,6 +22,9 @@ export class SteamService {
     if (!process.env.STEAM_API_KEY) {
       throw new Error('STEAM_API_KEY is not set in the environment variables');
     }
+    if (!process.env.APP_URL) {
+      throw new Error('APP_URL is not set in the environment variables');
+    }
 
     this.steam = new SteamAPI(process.env.STEAM_API_KEY);
 
